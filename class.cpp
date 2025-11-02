@@ -15,7 +15,9 @@ public:
 int main()
 {
     Student s1;
-    s1.name = "Rashmi";
-    s1.age = 20;
+    s1.name;
+    cin >> s1.name;
+    s1.age;
+    cin >> s1.age;
     s1.display();
 }

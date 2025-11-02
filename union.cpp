@@ -17,7 +17,8 @@ public:
 int main()
 {
     Student s1;
-    s1.age = 20;
+    s1.age;
+    cin >> s1.age;
     s1.displayage();
     s1.marks = 29;
     s1.displaymarks();
