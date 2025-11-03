@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
 enum Day
@@ -60,10 +59,4 @@ int main()
         cout << "Invalid day!" << endl;
         return 0;
     }
-
-    // Optional: weekend or weekday check
-    // if (today == Saturday || today == Sunday)
-    //     cout << "It's weekend!" << endl;
-    // else
-    //     cout << "It's a weekday." << endl;
 }
