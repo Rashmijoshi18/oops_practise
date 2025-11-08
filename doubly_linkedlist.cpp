@@ -4,6 +4,7 @@ struct Node
 {
     int data;
     Node *next;
+    Node *prev;
 };
 Node *head = NULL;
 void insert(int n)
@@ -11,6 +12,7 @@ void insert(int n)
     Node *newNode = new Node;
     newNode->data = n;
     newNode->next = NULL;
+    newNode->prev = NULL;
 
     if (head == NULL)
     {
@@ -21,49 +23,24 @@ void insert(int n)
         Node *temp = head;
         while (temp->next != NULL)
         {
-            // temp->next=newNode;
             temp = temp->next;
         }
         temp->next = newNode;
+        newNode->prev = temp;
     }
-}
-void insertposition(int pos, int n)
-{
-    Node *newNode = new Node;
-    newNode->data = n;
-    if (pos == 1)
-    {
-        newNode->next = head;
-        head = newNode;
-    }
-    Node *temp = head;
-    for (int i = 1; i < pos - 1 && temp != NULL; i++)
-    {
-        temp = temp->next;
-    }
-    if (temp == NULL)
-    {
-        cout << "invalid ";
-    }
-    newNode->next = temp->next;
-    temp->next = newNode;
 }
 void print()
 {
     Node *temp = head;
     while (temp != NULL)
     {
-        cout << temp->data << " ";
+        cout << temp->data;
         temp = temp->next;
     }
 }
-
 int main()
 {
-    insert(4);
+    insert(5);
     insert(1);
-    insert(7);
-    insert(8);
-    insertposition(2, 6);
     print();
 }
